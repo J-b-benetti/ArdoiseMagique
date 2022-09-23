@@ -30,6 +30,11 @@ public class GraphicalInterface extends javax.swing.JFrame {
         BackendPanel = new javax.swing.JPanel();
         MenuPanel = new javax.swing.JPanel();
         delateButton = new javax.swing.JButton();
+        squareButton = new javax.swing.JButton();
+        roundButton = new javax.swing.JButton();
+        redButton = new javax.swing.JButton();
+        greenButton = new javax.swing.JButton();
+        blueButton = new javax.swing.JButton();
         MenuBar = new javax.swing.JMenuBar();
         FileMenu = new javax.swing.JMenu();
         QuitMenuItem = new javax.swing.JMenuItem();
@@ -44,6 +49,7 @@ public class GraphicalInterface extends javax.swing.JFrame {
         BlueMenuBar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ardoise Magique");
 
         BackendPanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -54,6 +60,33 @@ public class GraphicalInterface extends javax.swing.JFrame {
         delateButton.setForeground(new java.awt.Color(255, 0, 0));
         delateButton.setText("Effacer");
 
+        squareButton.setBackground(new java.awt.Color(187, 187, 187));
+        squareButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        squareButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\squarePicture.png")); // NOI18N
+        squareButton.setText("Carré");
+
+        roundButton.setBackground(new java.awt.Color(187, 187, 187));
+        roundButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        roundButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\roundPicture.jpg")); // NOI18N
+        roundButton.setText("Rond");
+
+        redButton.setBackground(new java.awt.Color(187, 187, 187));
+        redButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        redButton.setForeground(new java.awt.Color(255, 0, 0));
+        redButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\redPicture.jpg")); // NOI18N
+        redButton.setText("Rouge");
+
+        greenButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        greenButton.setForeground(new java.awt.Color(0, 255, 0));
+        greenButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\greenPicture.jpg")); // NOI18N
+        greenButton.setText("Vert");
+
+        blueButton.setBackground(new java.awt.Color(187, 187, 187));
+        blueButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        blueButton.setForeground(new java.awt.Color(0, 0, 255));
+        blueButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\bluePicture.png")); // NOI18N
+        blueButton.setText("Bleu");
+
         javax.swing.GroupLayout MenuPanelLayout = new javax.swing.GroupLayout(MenuPanel);
         MenuPanel.setLayout(MenuPanelLayout);
         MenuPanelLayout.setHorizontalGroup(
@@ -61,13 +94,29 @@ public class GraphicalInterface extends javax.swing.JFrame {
             .addGroup(MenuPanelLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(delateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1211, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(squareButton, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(roundButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(241, 241, 241)
+                .addComponent(redButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(greenButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(blueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(353, Short.MAX_VALUE))
         );
         MenuPanelLayout.setVerticalGroup(
             MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuPanelLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(delateButton, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                .addGroup(MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(delateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(squareButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roundButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(redButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(blueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))
         );
 
@@ -81,7 +130,7 @@ public class GraphicalInterface extends javax.swing.JFrame {
             BackendPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackendPanelLayout.createSequentialGroup()
                 .addComponent(MenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 698, Short.MAX_VALUE))
+                .addGap(0, 697, Short.MAX_VALUE))
         );
 
         FileMenu.setText("Fichier");
@@ -192,6 +241,11 @@ public class GraphicalInterface extends javax.swing.JFrame {
     private javax.swing.JMenuItem RedMenuItem;
     private javax.swing.JMenuItem RoundMenuItem;
     private javax.swing.JMenuItem SquareMenuItem;
+    private javax.swing.JButton blueButton;
     private javax.swing.JButton delateButton;
+    private javax.swing.JButton greenButton;
+    private javax.swing.JButton redButton;
+    private javax.swing.JButton roundButton;
+    private javax.swing.JButton squareButton;
     // End of variables declaration//GEN-END:variables
 }
