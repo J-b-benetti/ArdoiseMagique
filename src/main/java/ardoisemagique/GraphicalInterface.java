@@ -29,6 +29,7 @@ public class GraphicalInterface extends javax.swing.JFrame {
 
         BackendPanel = new javax.swing.JPanel();
         MenuPanel = new javax.swing.JPanel();
+        delateButton = new javax.swing.JButton();
         MenuBar = new javax.swing.JMenuBar();
         FileMenu = new javax.swing.JMenu();
         QuitMenuItem = new javax.swing.JMenuItem();
@@ -48,15 +49,26 @@ public class GraphicalInterface extends javax.swing.JFrame {
 
         MenuPanel.setBackground(new java.awt.Color(153, 153, 153));
 
+        delateButton.setBackground(new java.awt.Color(204, 204, 204));
+        delateButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        delateButton.setForeground(new java.awt.Color(255, 0, 0));
+        delateButton.setText("Effacer");
+
         javax.swing.GroupLayout MenuPanelLayout = new javax.swing.GroupLayout(MenuPanel);
         MenuPanel.setLayout(MenuPanelLayout);
         MenuPanelLayout.setHorizontalGroup(
             MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1353, Short.MAX_VALUE)
+            .addGroup(MenuPanelLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(delateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1211, Short.MAX_VALUE))
         );
         MenuPanelLayout.setVerticalGroup(
             MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 83, Short.MAX_VALUE)
+            .addGroup(MenuPanelLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(delateButton, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout BackendPanelLayout = new javax.swing.GroupLayout(BackendPanel);
@@ -98,12 +110,15 @@ public class GraphicalInterface extends javax.swing.JFrame {
 
         ColorPointeurMenu.setText("Couleur du pointeur");
 
+        RedMenuItem.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\redPicture.jpg")); // NOI18N
         RedMenuItem.setText("Rouge");
         ColorPointeurMenu.add(RedMenuItem);
 
+        GreenMenuBar.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\greenPicture.jpg")); // NOI18N
         GreenMenuBar.setText("Vert");
         ColorPointeurMenu.add(GreenMenuBar);
 
+        BlueMenuBar.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\bluePicture.png")); // NOI18N
         BlueMenuBar.setText("Bleu");
         ColorPointeurMenu.add(BlueMenuBar);
 
@@ -177,5 +192,6 @@ public class GraphicalInterface extends javax.swing.JFrame {
     private javax.swing.JMenuItem RedMenuItem;
     private javax.swing.JMenuItem RoundMenuItem;
     private javax.swing.JMenuItem SquareMenuItem;
+    private javax.swing.JButton delateButton;
     // End of variables declaration//GEN-END:variables
 }
