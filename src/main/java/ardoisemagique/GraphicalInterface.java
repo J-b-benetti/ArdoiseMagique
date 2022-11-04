@@ -5,17 +5,26 @@
  */
 package ardoisemagique;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
+
 /**
  *
  * @author jbben
  */
-public class GraphicalInterface extends javax.swing.JFrame {
+public class GraphicalInterface extends javax.swing.JFrame implements MouseMotionListener {
 
     /**
      * Creates new form GraphicalInterface
      */
+    
+    
     public GraphicalInterface() {
         initComponents();
+        addMouseMotionListener(this);
     }
 
     /**
@@ -59,6 +68,11 @@ public class GraphicalInterface extends javax.swing.JFrame {
         delateButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         delateButton.setForeground(new java.awt.Color(255, 0, 0));
         delateButton.setText("Effacer");
+        delateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delateButtonActionPerformed(evt);
+            }
+        });
 
         squareButton.setBackground(new java.awt.Color(187, 187, 187));
         squareButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -110,13 +124,14 @@ public class GraphicalInterface extends javax.swing.JFrame {
             MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuPanelLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(delateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(squareButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(roundButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(redButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(blueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(delateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(roundButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(redButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(greenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(blueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18))
         );
 
@@ -137,6 +152,11 @@ public class GraphicalInterface extends javax.swing.JFrame {
 
         QuitMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         QuitMenuItem.setText("Quitter");
+        QuitMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QuitMenuItemActionPerformed(evt);
+            }
+        });
         FileMenu.add(QuitMenuItem);
 
         DelateMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -190,6 +210,24 @@ public class GraphicalInterface extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    public void mouseMoved(MouseEvent e) {
+        
+    }
+    
+    public void mouseDragged(MouseEvent e) {
+        Graphics g = getGraphics();
+        g.setColor(Color.red);
+        g.fillOval(e.getX(), e.getY(), 10, 10);
+    }
+    
+    private void QuitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitMenuItemActionPerformed
+        dispose();
+    }//GEN-LAST:event_QuitMenuItemActionPerformed
+
+    private void delateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delateButtonActionPerformed
+        repaint();
+    }//GEN-LAST:event_delateButtonActionPerformed
 
     /**
      * @param args the command line arguments

@@ -14,12 +14,15 @@ import java.util.*;
  */
 public class Point {
     
-    private int x;
-    private int y;
-    private Color color;
+    protected int x;
+    protected int y;
+    protected Color color;
     private int taille;
     private String typePoint;
 
+    public Point() {
+    }
+    
     public Point(int x, int y, Color color, int taille, String typePoint) {
         this.x = x;
         this.y = y;

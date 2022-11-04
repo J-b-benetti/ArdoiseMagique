@@ -16,6 +16,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Quitter"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="QuitMenuItemActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="DelateMenuItem">
               <Properties>
@@ -173,13 +176,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="delateButton" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="squareButton" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
-                          <Component id="roundButton" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
-                          <Component id="redButton" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                          <Component id="greenButton" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                          <Component id="blueButton" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="delateButton" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="roundButton" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="redButton" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                              <Component id="greenButton" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                              <Component id="blueButton" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
@@ -200,6 +205,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Effacer"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delateButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="squareButton">
               <Properties>
