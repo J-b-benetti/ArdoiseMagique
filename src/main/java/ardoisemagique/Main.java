@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
         //on sert du main comme starter
         GraphicalInterface gf = new GraphicalInterface();
-        gf.setVisible(true);
+        gf.setVisible(true); //on affiche la fenêtre
     }
 
 }
