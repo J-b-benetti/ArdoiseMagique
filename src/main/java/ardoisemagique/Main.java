@@ -18,6 +18,8 @@ public class Main {
         //on sert du main comme starter
         GraphicalInterface gf = new GraphicalInterface();
         gf.setVisible(true); //on affiche la fenêtre
+        
+        //à vous de tester ce Paint 2.0
     }
 
 }
