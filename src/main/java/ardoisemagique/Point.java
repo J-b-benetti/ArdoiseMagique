@@ -13,16 +13,16 @@ import java.util.*;
  * @author jbben
  */
 public class Point {
-    
+
     protected int x;
     protected int y;
     protected Color color;
     private int taille = 10;
-    private String typePoint;
+    protected String typePoint = "round";
 
     public Point() {
     }
-    
+
     public Point(int x, int y, Color color, int taille, String typePoint) {
         this.x = x;
         this.y = y;
@@ -70,7 +70,4 @@ public class Point {
     public void setTypePoint(String typePoint) {
         this.typePoint = typePoint;
     }
-    
-    
-    
 }

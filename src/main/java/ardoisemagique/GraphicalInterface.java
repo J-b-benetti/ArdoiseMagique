@@ -14,14 +14,13 @@ import java.awt.event.MouseMotionListener;
  *
  * @author jbben
  */
-public class GraphicalInterface extends javax.swing.JFrame implements MouseMotionListener{
+public class GraphicalInterface extends javax.swing.JFrame implements MouseMotionListener {
 
     /**
      * Creates new form GraphicalInterface
      */
-    
     Point pt = new Point();
-    
+
     public GraphicalInterface() {
         initComponents();
         addMouseMotionListener(this);
@@ -78,11 +77,21 @@ public class GraphicalInterface extends javax.swing.JFrame implements MouseMotio
         squareButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         squareButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\squarePicture.png")); // NOI18N
         squareButton.setText("Carré");
+        squareButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                squareButtonActionPerformed(evt);
+            }
+        });
 
         roundButton.setBackground(new java.awt.Color(187, 187, 187));
         roundButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         roundButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\roundPicture.jpg")); // NOI18N
         roundButton.setText("Rond");
+        roundButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                roundButtonActionPerformed(evt);
+            }
+        });
 
         redButton.setBackground(new java.awt.Color(187, 187, 187));
         redButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -190,9 +199,19 @@ public class GraphicalInterface extends javax.swing.JFrame implements MouseMotio
         FormPointeurMenu.setText("Forme du pointeur");
 
         RoundMenuItem.setText("Rond");
+        RoundMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RoundMenuItemActionPerformed(evt);
+            }
+        });
         FormPointeurMenu.add(RoundMenuItem);
 
         SquareMenuItem.setText("Carré");
+        SquareMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SquareMenuItemActionPerformed(evt);
+            }
+        });
         FormPointeurMenu.add(SquareMenuItem);
 
         EditMenu.add(FormPointeurMenu);
@@ -247,15 +266,27 @@ public class GraphicalInterface extends javax.swing.JFrame implements MouseMotio
     }// </editor-fold>//GEN-END:initComponents
 
     public void mouseMoved(MouseEvent e) {
-
+        //nothing
     }
 
     public void mouseDragged(MouseEvent e) {
         Graphics g = getGraphics();
         g.setColor(pt.getColor());
-        g.fillOval(e.getX(), e.getY(), pt.getTaille(), pt.getTaille());
+        pt.x = e.getX();
+        pt.y = e.getY();
+        
+        
+        if (pt.getTypePoint().equals("round")) {
+            g.fillOval(pt.x, pt.y, pt.getTaille(), pt.getTaille());
+        }
+        if (pt.getTypePoint().equals("square")) {
+            g.fillRect(pt.x, pt.y, pt.getTaille(), pt.getTaille());
+        } 
+        if (pt.getTypePoint() == null) {
+            g.fillOval(pt.x, pt.y, pt.getTaille(), pt.getTaille());
+        }
     }
-   
+
     private void QuitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitMenuItemActionPerformed
         dispose();
     }//GEN-LAST:event_QuitMenuItemActionPerformed
@@ -291,6 +322,23 @@ public class GraphicalInterface extends javax.swing.JFrame implements MouseMotio
     private void BlueMenuBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlueMenuBarActionPerformed
         pt.color = Color.blue;
     }//GEN-LAST:event_BlueMenuBarActionPerformed
+
+    private void roundButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roundButtonActionPerformed
+        pt.typePoint = "round";
+
+    }//GEN-LAST:event_roundButtonActionPerformed
+
+    private void squareButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_squareButtonActionPerformed
+        pt.typePoint = "square";
+    }//GEN-LAST:event_squareButtonActionPerformed
+
+    private void RoundMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RoundMenuItemActionPerformed
+        pt.typePoint = "round";
+    }//GEN-LAST:event_RoundMenuItemActionPerformed
+
+    private void SquareMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SquareMenuItemActionPerformed
+        pt.typePoint = "square";
+    }//GEN-LAST:event_SquareMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
