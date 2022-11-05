@@ -22,8 +22,26 @@ public class GraphicalInterface extends javax.swing.JFrame implements MouseMotio
     Point pt = new Point();
 
     public GraphicalInterface() {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(GraphicalInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(GraphicalInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(GraphicalInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(GraphicalInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+       
         initComponents();
         addMouseMotionListener(this);
+
     }
 
     /**
@@ -274,7 +292,7 @@ public class GraphicalInterface extends javax.swing.JFrame implements MouseMotio
         g.setColor(pt.getColor());
         pt.x = e.getX();
         pt.y = e.getY();
-        Color color = new Color(1f,0f,0f,.0f);
+        Color color = new Color(1f, 0f, 0f, .0f);
 
         if ((pt.getX() < 10 || pt.getX() > 1360) || (pt.getY() < 138 || pt.getY() > 725)) {
             g.setColor(color);
