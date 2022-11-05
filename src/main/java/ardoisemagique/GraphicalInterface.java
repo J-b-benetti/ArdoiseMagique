@@ -169,7 +169,7 @@ public class GraphicalInterface extends javax.swing.JFrame implements MouseMotio
             BackendPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackendPanelLayout.createSequentialGroup()
                 .addComponent(MenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 697, Short.MAX_VALUE))
+                .addGap(0, 685, Short.MAX_VALUE))
         );
 
         FileMenu.setText("Fichier");
@@ -274,17 +274,21 @@ public class GraphicalInterface extends javax.swing.JFrame implements MouseMotio
         g.setColor(pt.getColor());
         pt.x = e.getX();
         pt.y = e.getY();
-        
-        
+        Color color = new Color(1f,0f,0f,.0f);
+
+        if ((pt.getX() < 10 || pt.getX() > 1360) || (pt.getY() < 138 || pt.getY() > 725)) {
+            g.setColor(color);
+        }
         if (pt.getTypePoint().equals("round")) {
             g.fillOval(pt.x, pt.y, pt.getTaille(), pt.getTaille());
         }
         if (pt.getTypePoint().equals("square")) {
             g.fillRect(pt.x, pt.y, pt.getTaille(), pt.getTaille());
-        } 
+        }
         if (pt.getTypePoint() == null) {
             g.fillOval(pt.x, pt.y, pt.getTaille(), pt.getTaille());
         }
+
     }
 
     private void QuitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitMenuItemActionPerformed
