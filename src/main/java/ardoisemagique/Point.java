@@ -17,7 +17,7 @@ public class Point {
     protected int x;
     protected int y;
     protected Color color;
-    private int taille;
+    private int taille = 10;
     private String typePoint;
 
     public Point() {

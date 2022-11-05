@@ -7,7 +7,6 @@ package ardoisemagique;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 
@@ -15,12 +14,13 @@ import java.awt.event.MouseMotionListener;
  *
  * @author jbben
  */
-public class GraphicalInterface extends javax.swing.JFrame implements MouseMotionListener {
+public class GraphicalInterface extends javax.swing.JFrame implements MouseMotionListener{
 
     /**
      * Creates new form GraphicalInterface
      */
     
+    Point pt = new Point();
     
     public GraphicalInterface() {
         initComponents();
@@ -89,17 +89,32 @@ public class GraphicalInterface extends javax.swing.JFrame implements MouseMotio
         redButton.setForeground(new java.awt.Color(255, 0, 0));
         redButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\redPicture.jpg")); // NOI18N
         redButton.setText("Rouge");
+        redButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                redButtonActionPerformed(evt);
+            }
+        });
 
         greenButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         greenButton.setForeground(new java.awt.Color(0, 255, 0));
         greenButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\greenPicture.jpg")); // NOI18N
         greenButton.setText("Vert");
+        greenButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                greenButtonActionPerformed(evt);
+            }
+        });
 
         blueButton.setBackground(new java.awt.Color(187, 187, 187));
         blueButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         blueButton.setForeground(new java.awt.Color(0, 0, 255));
         blueButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\bluePicture.png")); // NOI18N
         blueButton.setText("Bleu");
+        blueButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                blueButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout MenuPanelLayout = new javax.swing.GroupLayout(MenuPanel);
         MenuPanel.setLayout(MenuPanelLayout);
@@ -161,6 +176,11 @@ public class GraphicalInterface extends javax.swing.JFrame implements MouseMotio
 
         DelateMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         DelateMenuItem.setText("Effacer");
+        DelateMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DelateMenuItemActionPerformed(evt);
+            }
+        });
         FileMenu.add(DelateMenuItem);
 
         MenuBar.add(FileMenu);
@@ -181,14 +201,29 @@ public class GraphicalInterface extends javax.swing.JFrame implements MouseMotio
 
         RedMenuItem.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\redPicture.jpg")); // NOI18N
         RedMenuItem.setText("Rouge");
+        RedMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RedMenuItemActionPerformed(evt);
+            }
+        });
         ColorPointeurMenu.add(RedMenuItem);
 
         GreenMenuBar.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\greenPicture.jpg")); // NOI18N
         GreenMenuBar.setText("Vert");
+        GreenMenuBar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GreenMenuBarActionPerformed(evt);
+            }
+        });
         ColorPointeurMenu.add(GreenMenuBar);
 
         BlueMenuBar.setIcon(new javax.swing.ImageIcon("C:\\Users\\jbben\\Documents\\MES DOCUMENTS\\Programmation\\Programmes Java\\ArdoiseMagique\\bluePicture.png")); // NOI18N
         BlueMenuBar.setText("Bleu");
+        BlueMenuBar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BlueMenuBarActionPerformed(evt);
+            }
+        });
         ColorPointeurMenu.add(BlueMenuBar);
 
         EditMenu.add(ColorPointeurMenu);
@@ -210,17 +245,17 @@ public class GraphicalInterface extends javax.swing.JFrame implements MouseMotio
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     public void mouseMoved(MouseEvent e) {
-        
+
     }
-    
+
     public void mouseDragged(MouseEvent e) {
         Graphics g = getGraphics();
-        g.setColor(Color.red);
-        g.fillOval(e.getX(), e.getY(), 10, 10);
+        g.setColor(pt.getColor());
+        g.fillOval(e.getX(), e.getY(), pt.getTaille(), pt.getTaille());
     }
-    
+   
     private void QuitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitMenuItemActionPerformed
         dispose();
     }//GEN-LAST:event_QuitMenuItemActionPerformed
@@ -228,6 +263,34 @@ public class GraphicalInterface extends javax.swing.JFrame implements MouseMotio
     private void delateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delateButtonActionPerformed
         repaint();
     }//GEN-LAST:event_delateButtonActionPerformed
+
+    private void DelateMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelateMenuItemActionPerformed
+        repaint();
+    }//GEN-LAST:event_DelateMenuItemActionPerformed
+
+    private void redButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redButtonActionPerformed
+        pt.color = Color.red;
+    }//GEN-LAST:event_redButtonActionPerformed
+
+    private void greenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_greenButtonActionPerformed
+        pt.color = Color.green;
+    }//GEN-LAST:event_greenButtonActionPerformed
+
+    private void blueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blueButtonActionPerformed
+        pt.color = Color.blue;
+    }//GEN-LAST:event_blueButtonActionPerformed
+
+    private void RedMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RedMenuItemActionPerformed
+        pt.color = Color.red;
+    }//GEN-LAST:event_RedMenuItemActionPerformed
+
+    private void GreenMenuBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GreenMenuBarActionPerformed
+        pt.color = Color.green;
+    }//GEN-LAST:event_GreenMenuBarActionPerformed
+
+    private void BlueMenuBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlueMenuBarActionPerformed
+        pt.color = Color.blue;
+    }//GEN-LAST:event_BlueMenuBarActionPerformed
 
     /**
      * @param args the command line arguments

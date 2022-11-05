@@ -27,6 +27,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Effacer"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DelateMenuItemActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -64,6 +67,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Rouge"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RedMenuItemActionPerformed"/>
+                  </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="GreenMenuBar">
                   <Properties>
@@ -72,6 +78,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Vert"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GreenMenuBarActionPerformed"/>
+                  </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="BlueMenuBar">
                   <Properties>
@@ -80,6 +89,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Bleu"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BlueMenuBarActionPerformed"/>
+                  </Events>
                 </MenuItem>
               </SubComponents>
             </Menu>
@@ -253,6 +265,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Rouge"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="redButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="greenButton">
               <Properties>
@@ -267,6 +282,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Vert"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="greenButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="blueButton">
               <Properties>
@@ -284,6 +302,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Bleu"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="blueButtonActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
